@@ -1,0 +1,21 @@
+<h1>DevOps Monitoring Dashboard</h1>
+<p>Real-time CI/CD and Microservice Monitoring</p>
+
+<button onclick="loadStatus()">Refresh Status</button>
+
+<div id="cards"></div>
+
+<script>
+function loadStatus() {
+  fetch('/status')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("cards").innerHTML = `
+        <div class="card"><b>Build Status</b><br>${data.build_status}</div>
+        <div class="card"><b>Deployment</b><br>${data.deployment_status}</div>
+        <div class="card"><b>Last Deployed</b><br>${data.last_deployed}</div>
+        <div class="card"><b>Analytics</b><pre>${JSON.stringify(data.analytics, null, 2)}</pre></div>
+      `;
+    });
+}
+</script>
