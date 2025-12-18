@@ -1,0 +1,51 @@
+2025-12-16 22:29:21,957 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.102:5001
+2025-12-16 22:29:21,957 INFO [33mPress CTRL+C to quit[0m
+2025-12-16 22:40:27,791 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.102:5001
+2025-12-16 22:40:27,791 INFO [33mPress CTRL+C to quit[0m
+2025-12-16 22:40:41,084 INFO Home endpoint accessed
+2025-12-16 22:40:41,085 INFO 127.0.0.1 - - [16/Dec/2025 22:40:41] "GET / HTTP/1.1" 200 -
+2025-12-16 22:41:00,652 INFO Health check called
+2025-12-16 22:41:00,654 INFO 127.0.0.1 - - [16/Dec/2025 22:41:00] "GET /health HTTP/1.1" 200 -
+2025-12-16 22:41:07,063 INFO Status endpoint accessed
+2025-12-16 22:41:07,064 INFO 127.0.0.1 - - [16/Dec/2025 22:41:07] "GET /status HTTP/1.1" 200 -
+2025-12-16 22:49:22,791 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.102:5001
+2025-12-16 22:49:22,792 INFO [33mPress CTRL+C to quit[0m
+2025-12-16 22:49:33,923 INFO Status endpoint accessed
+2025-12-16 22:49:33,924 INFO 127.0.0.1 - - [16/Dec/2025 22:49:33] "GET /status HTTP/1.1" 200 -
+2025-12-16 22:50:19,150 INFO Status endpoint accessed
+2025-12-16 22:50:19,152 INFO 127.0.0.1 - - [16/Dec/2025 22:50:19] "GET /status HTTP/1.1" 200 -
+2025-12-16 22:55:31,307 INFO Status endpoint accessed
+2025-12-16 22:55:31,308 INFO 127.0.0.1 - - [16/Dec/2025 22:55:31] "GET /status HTTP/1.1" 200 -
+2025-12-16 22:55:59,620 INFO Status endpoint accessed
+2025-12-16 22:55:59,621 INFO 127.0.0.1 - - [16/Dec/2025 22:55:59] "GET /status HTTP/1.1" 200 -
+2025-12-16 23:03:11,462 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.102:5001
+2025-12-16 23:03:11,462 INFO [33mPress CTRL+C to quit[0m
+2025-12-16 23:03:29,298 INFO Health check called
+2025-12-16 23:03:29,303 INFO 127.0.0.1 - - [16/Dec/2025 23:03:29] "GET /health HTTP/1.1" 200 -
+2025-12-16 23:03:35,760 INFO Status endpoint accessed
+2025-12-16 23:03:35,760 INFO 127.0.0.1 - - [16/Dec/2025 23:03:35] "GET /status HTTP/1.1" 200 -
+2025-12-16 23:03:41,887 INFO Status endpoint accessed
+2025-12-16 23:03:41,888 INFO 127.0.0.1 - - [16/Dec/2025 23:03:41] "GET /status HTTP/1.1" 200 -
+2025-12-16 23:03:46,449 INFO Home endpoint accessed
+2025-12-16 23:03:46,450 INFO 127.0.0.1 - - [16/Dec/2025 23:03:46] "GET / HTTP/1.1" 200 -
+2025-12-16 23:03:52,155 INFO Status endpoint accessed
+2025-12-16 23:03:52,156 INFO 127.0.0.1 - - [16/Dec/2025 23:03:52] "GET /status HTTP/1.1" 200 -
+2025-12-16 23:08:57,986 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.102:5001
+2025-12-16 23:08:57,987 INFO [33mPress CTRL+C to quit[0m
+2025-12-16 23:09:45,963 INFO Status endpoint accessed
+2025-12-16 23:09:45,964 INFO 127.0.0.1 - - [16/Dec/2025 23:09:45] "GET /status HTTP/1.1" 200 -

@@ -2,22 +2,39 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+
+        stage('Check Tools') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/devops-monitoring-dashboard.git'
+                echo 'Checking Docker...'
+                bat 'docker --version'
+                bat 'docker compose version'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build & Deploy Containers') {
             steps {
-                sh 'pip3 install -r Microservice-a/requirements.txt'
+                echo 'Stopping old containers'
+                bat 'docker compose down'
+
+                echo 'Building and starting containers'
+                bat 'docker compose up -d --build'
             }
         }
 
-        stage('Deploy Microservice A') {
+        stage('Verify Deployment') {
             steps {
-                sh 'nohup python3 Microservice-a/app.py &'
+                echo 'Listing running containers'
+                bat 'docker ps'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully 🎉'
+        }
+        failure {
+            echo 'Pipeline failed ❌'
         }
     }
 }
