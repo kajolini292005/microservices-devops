@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "READY FOR SERVICE A!"
+    return "READY FOR SERVICE A!!..."
 
 @app.route("/health")
 def health():
