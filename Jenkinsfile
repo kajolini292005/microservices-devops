@@ -11,15 +11,20 @@ pipeline {
             }
         }
 
-        stage('Build & Deploy Containers') {
-            steps {
-                echo 'Stopping old containers'
-                bat 'docker compose down'
+       stage('Build & Deploy Containers') {
+    steps {
+        echo 'Stopping and removing old containers...'
+        bat 'docker compose down --remove-orphans'
+        bat 'docker rm -f service-a service-b || exit 0'
 
-                echo 'Building and starting containers'
-                bat 'docker compose up -d --build'
-            }
-        }
+        echo 'Building fresh images...'
+        bat 'docker compose build'
+
+        echo 'Starting new containers...'
+        bat 'docker compose up -d'
+    }
+}
+
 
         stage('Verify Deployment') {
             steps {
