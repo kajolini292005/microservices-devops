@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Webhook Test') {
     steps {
         echo '🔥 Webhook successfully triggered this build!'
