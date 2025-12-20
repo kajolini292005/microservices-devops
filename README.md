@@ -4,7 +4,7 @@ A Jenkins CI/CD pipeline automates build and deployment.
 Services communicate securely using AWS VPC Peering.
 
 ## Current Status
-- Application development completed
+- Application development completed 
 - CI/CD pipeline defined
 - Cloud deployment in progress
 
