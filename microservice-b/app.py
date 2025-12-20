@@ -14,7 +14,7 @@ logging.basicConfig(
 @app.route("/")
 def home():
     logging.info("Home endpoint accessed")
-    return "READY FOR SERVICE B!!"
+    return "Hello READY FOR SERVICE B!!"
 
 @app.route("/health")
 def health():
