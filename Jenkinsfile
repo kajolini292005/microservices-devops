@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Webhook Test') {
+    steps {
+        echo '🔥 Webhook successfully triggered this build'
+    }
+}
+
 
         stage('Check Tools') {
             steps {
