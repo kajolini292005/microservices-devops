@@ -18,22 +18,22 @@ pipeline {
         stage('Check Tools') {
             steps {
                 echo 'Checking Docker...'
-                bat 'docker --version'
-                bat 'docker compose version'
+                sh 'docker --version'
+                sh 'docker compose version'
             }
         }
 
        stage('Build & Deploy Containers') {
     steps {
         echo 'Stopping and removing old containers...'
-        bat 'docker compose down --remove-orphans'
-        bat 'docker rm -f service-a service-b || exit 0'
+        sh 'docker compose down --remove-orphans'
+        sh 'docker rm -f service-a service-b || exit 0'
 
         echo 'Building fresh images...'
-        bat 'docker compose build'
+        sh 'docker compose build'
 
         echo 'Starting new containers...'
-        bat 'docker compose up -d --build'
+        sh 'docker compose up -d --build'
     }
 }
 
@@ -41,7 +41,7 @@ pipeline {
         stage('Verify Deployment') {
             steps {
                 echo 'Listing running containers'
-                bat 'docker ps'
+                sh 'docker ps'
             }
         }
     }
