@@ -33,7 +33,7 @@ pipeline {
         bat 'docker compose build'
 
         echo 'Starting new containers...'
-        bat 'docker compose up -d'
+        bat 'docker compose up -d --build'
     }
 }
 
