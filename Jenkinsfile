@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     docker --version
-                    docker-compose --version
+                    docker compose --version
                 '''
             }
         }
@@ -29,14 +29,14 @@ pipeline {
             steps {
                 sh '''
                     echo "Stopping old containers..."
-                    docker-compose down --remove-orphans || true
+                    docker compose down --remove-orphans || true
                     docker rm -f service-a service-b || true
 
                     echo "Building images..."
-                    docker-compose build
+                    docker compose build
 
                     echo "Starting containers..."
-                    docker-compose up -d
+                    docker compose up -d
                 '''
             }
         }
