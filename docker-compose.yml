@@ -10,6 +10,7 @@ services:
       - app-network
     restart: unless-stopped
     healthcheck:
+      disable: true
       test: ["CMD", "curl", "-f", "http://localhost:5000/status"]
       interval: 10s
       timeout: 5s
@@ -24,6 +25,7 @@ services:
       - app-network
     restart: unless-stopped
     healthcheck:
+      disable: true
       test: ["CMD", "curl", "-f", "http://localhost:5001/status"]
       interval: 10s
       timeout: 5s
