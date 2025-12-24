@@ -49,7 +49,8 @@ pipeline {
             steps {
                 sh '''
                     docker ps
-                    echo "Checking service-a..."
+                    echo "Checking services..."
+                    sleep 10
                     curl http://localhost:5000 || true
                 '''
             }
