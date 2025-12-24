@@ -24,7 +24,7 @@ pipeline {
             }
         }
 
-        stage('Build & Deploy Containers') {
+        stage('Build & Deploy Containers (Jenkins EC2)') {
             steps {
                 sh '''
                     echo "Stopping old containers..."
@@ -54,22 +54,21 @@ pipeline {
                 '''
             }
         }
-    }
 
         stage('Deploy to Staging') {
-    steps {
-        sshagent(credentials: ['staging-ssh']) {
-            sh '''
-            ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.152 << EOF
-              cd ~/deploy/microservices-devops
-              docker-compose down || true
-              docker-compose up -d
-            EOF
-            '''
+            steps {
+                sshagent(credentials: ['staging-ssh']) {
+                    sh '''
+                    ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.152 << EOF
+                      cd ~/deploy/microservices-devops
+                      docker-compose down || true
+                      docker-compose up -d
+                    EOF
+                    '''
+                }
+            }
         }
     }
-}
-
 
     post {
         success {
