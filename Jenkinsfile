@@ -20,7 +20,6 @@ pipeline {
             steps {
                 sh '''
                     docker --version
-                    docker compose --version
                 '''
             }
         }
@@ -29,14 +28,19 @@ pipeline {
             steps {
                 sh '''
                     echo "Stopping old containers..."
-                    docker compose down --remove-orphans || true
                     docker rm -f service-a service-b || true
+                    docker network rm app-network || true
+
+                    echo "Creating network..."
+                    docker network create app-network
 
                     echo "Building images..."
-                    docker compose build
+                    docker build -t microservice-a ./microservice-a
+                    docker build -t microservice-b ./microservice-b
 
                     echo "Starting containers..."
-                    docker compose up -d
+                    docker run -d --name service-b --network app-network -p 5001:5001 microservice-b
+                    docker run -d --name service-a --network app-network -p 5000:5000 microservice-a
                 '''
             }
         }
@@ -45,6 +49,8 @@ pipeline {
             steps {
                 sh '''
                     docker ps
+                    echo "Checking service-a..."
+                    curl http://localhost:5000 || true
                 '''
             }
         }
