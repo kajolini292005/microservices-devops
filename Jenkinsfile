@@ -56,6 +56,21 @@ pipeline {
         }
     }
 
+        stage('Deploy to Staging') {
+    steps {
+        sshagent(credentials: ['staging-ssh']) {
+            sh '''
+            ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.152 << EOF
+              cd ~/deploy/microservices-devops
+              docker-compose down || true
+              docker-compose up -d
+            EOF
+            '''
+        }
+    }
+}
+
+
     post {
         success {
             echo 'Pipeline completed successfully 🎉'
