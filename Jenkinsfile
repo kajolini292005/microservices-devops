@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/kajolini292005/microservices-devops.git'
-            }
-        }
-
         stage('Webhook Test') {
             steps {
                 echo '🔥 Webhook successfully triggered this build!'
